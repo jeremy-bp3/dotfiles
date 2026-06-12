@@ -1,0 +1,42 @@
+# Brewfile
+
+cask_args appdir: "/Applications"
+
+tap "anomalyco/tap"
+tap "hashicorp/tap"
+tap "temporalio/brew"
+
+# CLI tools
+brew "direnv"
+brew "fd"
+brew "fzf"
+brew "gh"
+brew "jq"
+brew "neovim"
+brew "opencode", tap: "anomalyco/tap"
+brew "ripgrep"
+brew "tcld", tap: "temporalio/brew"
+brew "temporal"
+brew "tmux"
+brew "tree-sitter"
+brew "wget"
+brew "vault", tap: "hashicorp/tap"
+
+# Optional: macOS already includes these
+# brew "git"
+# brew "zsh"
+
+# Desktop apps
+# Commented out, already installed
+# cask "brave-browser"
+# cask "google-chrome"
+# cask "obsidian"
+# cask "slack"
+
+cask "cursor"
+cask "ghostty"
+cask "openvpn-connect"
+cask "postman"
+cask "raycast"
+cask "sublime-text"
+cask "zoom"

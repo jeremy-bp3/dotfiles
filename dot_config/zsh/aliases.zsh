@@ -1,0 +1,10 @@
+# ~/.config/zsh/aliases.zsh
+alias gst='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gco='git checkout'
+alias gp='git push'
+alias gl='git pull'
+alias gd='git diff'
+alias glog='git log --oneline --graph --decorate'

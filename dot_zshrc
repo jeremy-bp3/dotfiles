@@ -1,0 +1,1 @@
+[[ -f "$XDG_CONFIG_HOME/zsh/interactive.zsh" ]] && source "$XDG_CONFIG_HOME/zsh/interactive.zsh"
