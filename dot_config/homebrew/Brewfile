@@ -4,10 +4,13 @@ cask_args appdir: "/Applications"
 
 tap "anomalyco/tap"
 tap "hashicorp/tap"
+tap "homebrew/cask-fonts"
 tap "temporalio/brew"
 
 # CLI tools
+brew "bat"
 brew "direnv"
+brew "eza"
 brew "fd"
 brew "fzf"
 brew "gh"
@@ -21,6 +24,9 @@ brew "tmux"
 brew "tree-sitter"
 brew "wget"
 brew "vault", tap: "hashicorp/tap"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+brew "zsh-completions"
 
 # Optional: macOS already includes these
 # brew "git"
@@ -34,6 +40,7 @@ brew "vault", tap: "hashicorp/tap"
 # cask "slack"
 
 cask "cursor"
+cask "font-jetbrains-mono-nerd-font"
 cask "ghostty"
 cask "openvpn-connect"
 cask "postman"

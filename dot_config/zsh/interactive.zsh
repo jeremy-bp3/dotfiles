@@ -8,17 +8,44 @@ HISTSIZE=50000
 SAVEHIST=50000
 setopt append_history share_history hist_ignore_dups hist_reduce_blanks
 
-# Completion (keep the dump in XDG cache, not $HOME)
+# Completion
+# (zsh-completiongs must be on fpath BEFORE compinit)
+# (keep the dump in XDG cache, not $HOME)
+fpath=("$HOMEBREW_PREFIX/share/zsh-completions" $fpath)
 ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump-${HOST}-${ZSH_VERSION}"
 mkdir -p "$XDG_CACHE_HOME/zsh"
-autoload -Uz compinit
-compinit -d "$ZSH_COMPDUMP"
+autoload -Uz compinit && compinit -i -d "$ZSH_COMPDUMP"
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' menu select
 
 # Prompt: starship
 command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
 
-# fzf interactive integration.
-command -v fzf >/dev/null 2>&1 && source <(fzf --zsh)
+# direnv
+command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
+
+# bat: theme + man pages
+export BAT_THEME="TwoDark"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
+
+# fzf (fd-backed + bat preview)
+if command -v fzf >/dev/null 2>&1; then
+  source <(fzf --zsh)
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
+  export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+  export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}'"
+fi
+
+# zsh-autosuggestions
+[[ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] \
+  && source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # Aliases.
 [[ -f "$XDG_CONFIG_HOME/zsh/aliases.zsh" ]] && source "$XDG_CONFIG_HOME/zsh/aliases.zsh"
+
+# zsh-syntax-highlighting — MUST be sourced LAST
+[[ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] \
+  && source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"

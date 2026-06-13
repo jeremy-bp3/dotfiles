@@ -1,0 +1,8 @@
+[user]
+	name = Jeremy Warren
+	email = jwarren@lwolf.com
+[init]
+	defaultBranch = main
+
+[core]
+	editor = nvim
