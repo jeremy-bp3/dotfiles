@@ -1,0 +1,8 @@
+[tools]
+node = "lts"
+bun = "latest"
+go = "latest"
+
+[settings]
+# Respect existing .nvmrc / .node-version files in your repos
+idiomatic_version_file_enable_tools = ["node"]

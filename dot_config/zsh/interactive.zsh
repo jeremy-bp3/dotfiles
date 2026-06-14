@@ -24,6 +24,9 @@ command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
 # direnv
 command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
 
+# mise (runtime/version manager)
+command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
+
 # bat: theme + man pages
 export BAT_THEME="TwoDark"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"

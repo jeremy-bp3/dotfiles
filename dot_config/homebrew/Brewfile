@@ -4,7 +4,6 @@ cask_args appdir: "/Applications"
 
 tap "anomalyco/tap"
 tap "hashicorp/tap"
-tap "homebrew/cask-fonts"
 tap "temporalio/brew"
 
 # CLI tools
@@ -15,6 +14,7 @@ brew "fd"
 brew "fzf"
 brew "gh"
 brew "jq"
+brew "mise"
 brew "neovim"
 brew "opencode", tap: "anomalyco/tap"
 brew "ripgrep"

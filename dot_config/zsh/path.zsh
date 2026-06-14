@@ -23,6 +23,8 @@ fi
 path=(
   "$HOME/.local/bin"
   "$HOME/bin"
+  "$XDG_DATA_HOME/mise/shims"   # mise-managed runtimes
+  "$HOME/go/bin"                # `go install` binaries (GOPATH/bin)
   $path
 )
 
