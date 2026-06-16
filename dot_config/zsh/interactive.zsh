@@ -24,6 +24,9 @@ command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
 # direnv
 command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
 
+# zoxide (smart cd)
+command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
+
 # mise (runtime/version manager)
 command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
 

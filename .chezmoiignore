@@ -1,0 +1,7 @@
+# TPM-installed tmux plugins (reproduced by run_once bootstrap script)
+.config/tmux/plugins/**
+
+# LazyVim starter docs
+.config/nvim/README.md
+.config/nvim/LICENSE
+
