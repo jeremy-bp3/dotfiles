@@ -5,3 +5,6 @@
 .config/nvim/README.md
 .config/nvim/LICENSE
 
+# Work aliases
+.config/zsh/aliases.work.zsh
+

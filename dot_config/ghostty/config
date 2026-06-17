@@ -1,2 +1,12 @@
+# Font
 font-family = "JetBrainsMono Nerd Font"
 font-size = 14
+
+# Ghostty theme
+theme = TokyoNight
+
+# Opacity of split windows
+unfocused-split-opacity = 0.88
+
+# Always show ghostty as the title
+title = ghostty

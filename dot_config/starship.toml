@@ -1,3 +1,6 @@
 # Mise node shims can take longer than Starship's default
 # 500ms timeout to resolve
 command_timeout = 2000
+
+[gcloud]
+disabled = true
