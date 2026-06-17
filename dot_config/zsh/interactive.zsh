@@ -45,6 +45,10 @@ if command -v fzf >/dev/null 2>&1; then
   export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}'"
 fi
 
+# gcloud / gsutil / bq completion (after compinit)
+[[ -f /opt/homebrew/share/google-cloud-sdk/completion.zsh.inc ]] \
+  && source /opt/homebrew/share/google-cloud-sdk/completion.zsh.inc
+
 # sesh: Alt-s opens a session picker from the shell
 function sesh-sessions() {
   {
@@ -68,6 +72,9 @@ bindkey -M viins '\es' sesh-sessions
 
 # Aliases.
 [[ -f "$XDG_CONFIG_HOME/zsh/aliases.zsh" ]] && source "$XDG_CONFIG_HOME/zsh/aliases.zsh"
+
+# Work Aliases.
+[[ -f "$XDG_CONFIG_HOME/zsh/aliases.work.zsh" ]] && source "$XDG_CONFIG_HOME/zsh/aliases.work.zsh"
 
 # zsh-syntax-highlighting — MUST be sourced LAST
 [[ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] \
