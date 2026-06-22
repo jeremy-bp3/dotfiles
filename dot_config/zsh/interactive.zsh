@@ -66,6 +66,16 @@ bindkey -M emacs '\es' sesh-sessions
 bindkey -M vicmd '\es' sesh-sessions
 bindkey -M viins '\es' sesh-sessions
 
+# With tmux extended-keys=always, zsh sees CSI-u Shift+Enter directly.
+if [[ -n "$TMUX" ]]; then
+  bindkey -M emacs $'\e[13;2u' accept-line
+  bindkey -M viins $'\e[13;2u' accept-line
+  bindkey -M vicmd $'\e[13;2u' accept-line
+  bindkey -M emacs $'\e[27;2;13~' accept-line
+  bindkey -M viins $'\e[27;2;13~' accept-line
+  bindkey -M vicmd $'\e[27;2;13~' accept-line
+fi
+
 # zsh-autosuggestions
 [[ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] \
   && source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
