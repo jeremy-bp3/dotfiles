@@ -9,9 +9,10 @@ SAVEHIST=50000
 setopt append_history share_history hist_ignore_dups hist_reduce_blanks
 
 # Completion
-# (zsh-completiongs must be on fpath BEFORE compinit)
+# (zsh-completiongs, orbstack must be on fpath BEFORE compinit)
 # (keep the dump in XDG cache, not $HOME)
 fpath=("$HOMEBREW_PREFIX/share/zsh-completions" $fpath)
+[[ -d "$HOME/.orbstack/shell/completions/zsh" ]] && fpath+=("$HOME/.orbstack/shell/completions/zsh")
 ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump-${HOST}-${ZSH_VERSION}"
 mkdir -p "$XDG_CACHE_HOME/zsh"
 autoload -Uz compinit && compinit -i -d "$ZSH_COMPDUMP"
