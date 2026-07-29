@@ -2,6 +2,7 @@
 node = "lts"
 bun = "latest"
 go = "latest"
+"npm:pnpm" = "latest"
 
 [settings]
 # Respect existing .nvmrc / .node-version files in your repos

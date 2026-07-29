@@ -24,6 +24,7 @@ path=(
   "$HOME/.local/bin"
   "$HOME/bin"
   "$XDG_DATA_HOME/mise/shims"   # mise-managed runtimes
+  "$XDG_DATA_HOME/pnpm/bin"     # pnpm global executables
   "$HOME/go/bin"                # `go install` binaries (GOPATH/bin)
   "/opt/homebrew/share/google-cloud-sdk/bin"   # gcloud, gsutil, bq
   "$HOME/.orbstack/bin"         # orbstack
