@@ -1,0 +1,5 @@
+{{- $profiles := list "personal" "work" -}}
+{{- $profile := promptChoiceOnce . "profile" "Machine profile" $profiles -}}
+
+[data]
+profile = {{ $profile | quote }}

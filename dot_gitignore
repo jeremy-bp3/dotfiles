@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+
+# mise local
+mise.local.toml
+
+**/.claude/settings.local.json

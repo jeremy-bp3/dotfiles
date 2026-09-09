@@ -3,8 +3,12 @@
 cask_args appdir: "/Applications"
 
 tap "anomalyco/tap"
+
+{{ if eq .profile "work" }}
 tap "hashicorp/tap"
 tap "temporalio/brew"
+{{ end }}
+
 
 # CLI tools
 brew "bat"
@@ -21,16 +25,19 @@ brew "neovim"
 brew "opencode", tap: "anomalyco/tap"
 brew "ripgrep"
 brew "sesh"
-brew "tcld", tap: "temporalio/brew"
-brew "temporal"
 brew "tmux"
 brew "tree-sitter"
 brew "wget"
-brew "vault", tap: "hashicorp/tap"
 brew "zoxide"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "zsh-completions"
+
+{{ if eq .profile "work" }}
+brew "tcld", tap: "temporalio/brew"
+brew "temporal"
+brew "vault", tap: "hashicorp/tap"
+{{ end }}
 
 # Optional: macOS already includes these
 # brew "git"
@@ -44,14 +51,17 @@ brew "zsh-completions"
 # cask "slack"
 
 cask "claude-code"
-cask "cursor"
 cask "font-jetbrains-mono-nerd-font"
-cask "gcloud-cli"
 cask "ghostty"
+cask "raycast"
+
+{{ if eq .profile "work" }}
+cask "cursor"
+cask "gcloud-cli"
 cask "openvpn-connect"
 cask "orbstack"
 cask "postman"
-cask "raycast"
 cask "redis-insight"
 cask "sublime-text"
 cask "zoom"
+{{ end }}
