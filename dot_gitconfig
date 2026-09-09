@@ -6,4 +6,4 @@
 
 [core]
 	editor = nvim
-	excludesFile = /Users/jwarren/.gitignore
+	excludesFile = ~/.gitignore
