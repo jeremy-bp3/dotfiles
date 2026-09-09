@@ -1,3 +1,6 @@
+# Repository documentation
+README.md
+
 # TPM-installed tmux plugins (reproduced by run_once bootstrap script)
 .config/tmux/plugins/**
 
@@ -7,4 +10,3 @@
 
 # Work aliases
 .config/zsh/aliases.work.zsh
-
